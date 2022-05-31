@@ -2353,25 +2353,79 @@ input, select, textarea {
 	  }
   }
 
-
-
-  .splash-slide {
-	animation: splash-slide 0.75s;
+ 
+.rev-block {
 	position: relative;
-  
+	width: fit-content;
+}
+
+.rev-block span {
+	opacity: 0;
+	animation: appear-text 0.0001s linear forwards;
+	animation-delay: 1.4s;
+}
+
+.rev-block:after {
+	content: '';
+	top: 0;
+	left: 0;
+	position: absolute;
+	width: 0%;
+	height: 100%;
+	background: black;
+	animation: rev-block 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+	animation-delay: 1s;
+}
+
+@keyframes rev-block {
+
+	0% {
+		 left: 0;
+		 width: 0%;
+	}
+	50% {
+		 left: 0;
+		 width: 100%;
+	}
+	100% {
+		 left: 100%;
+		 width: 0%;
 	}
 
-	@keyframes splash-slide {
-	from {
-		opacity: 0;
-		line-height: 180px;
+}
 
+@keyframes appear-text {
+
+	0% {
+		 opacity: 0;
+	}
+	100% {
+		 opacity: 1;
 	}
 
-	to {
-		opacity: 1;
-		line-height: 27.5px;
-	}
+}
+ 
+ 
+ 
+ 
+@keyframes revealer {
+ 
+ 0%, 50% {
+         transform-origin: 0 50%;
+ }
+ 
+ 60%, 100% {
+         transform-origin: 100% 50%; 
+ }
+ 
+ 
+ 60% {
+         transform: scaleX(1);
+ }
+ 
+ 100% {
+         transform: scaleX(0);
+ }
 }
 
 
@@ -2930,3 +2984,140 @@ input, select, textarea {
 		transform: translateX(0px);
 	}
 }
+
+
+/* Contact Me */
+
+.contact-view {
+	align-items: center;
+	justify-content: center;
+	line-height: 1.5;
+	font-size: 1rem;
+	
+}
+
+.contact-button {
+	position: relative;
+	border: 0;
+	display: inline-block;
+	width: 11.75rem;
+	height: auto;
+	cursor: pointer;
+	outline: none;
+	vertical-align: middle;
+	background: transparent;
+	padding: 0 0;
+}
+
+.contact-button:hover {
+	background-color: white;
+
+}
+
+.c-text {
+	position: absolute;
+	inset: 0;
+	top: 22%;
+	margin-left: 1.75rem;
+	color: black;
+	line-height: 1.6;
+	text-align: center;
+	transition: all 0.4s ease-in-out;
+	font-size: 11.66pt;
+}
+
+.c-circle {
+	position: relative;
+	display: block;
+	margin: 0;
+	width: 3rem;
+	height: 3rem;
+	background: black;
+	border-radius: 1.625rem;
+	transition: all 0.4s ease-in-out;
+}
+
+.c-icon {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	background: black;
+}
+
+.c-arrow {
+	left: 0.625rem;
+	width: 1.125rem;
+	height: 0.125rem;
+	background: none;
+	transition: all 0.4s ease-in-out;
+}
+
+.c-arrow::before {
+	content: "";
+	position: absolute;
+	top: -0.273rem;
+	right: 0.0625rem;
+	width: 0.625rem;
+	height: 0.625rem;
+	border-top: 0.125rem solid white;
+	border-right: 0.125rem solid white;
+	transform: rotate(45deg);
+
+}
+
+ button:hover .c-circle {
+	 width: 100%;
+ }
+
+ button:hover .c-arrow {
+	 background: white;
+	 transform: translateX(1rem);
+
+ }
+
+ button:hover .c-text {
+	 color: white;
+ }
+
+ #c-snackbar {
+	visibility: hidden;
+	min-width: 250px;
+	margin-left: -125px;
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	border-radius: 2px;
+	padding: 16px;
+	position: fixed;
+	z-index: 1;
+	left: 50%;
+	bottom: 30px;
+	font-size: 17px;
+  }
+  
+  #c-snackbar.show {
+	visibility: visible;
+	-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+	animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  @-webkit-keyframes fadein {
+	from {bottom: 0; opacity: 0;} 
+	to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+	from {bottom: 0; opacity: 0;}
+	to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+	from {bottom: 30px; opacity: 1;} 
+	to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+	from {bottom: 30px; opacity: 1;}
+	to {bottom: 0; opacity: 0;}
+  }

@@ -224,3 +224,23 @@ const close = document.getElementById('mclose');
 		modal_container.classList.remove('show');
 	});
 
+// Snackbar
+
+function contactSuccess() {
+	var cName = document.getElementById('cName');
+	var cEmail = document.getElementById('cEmail');
+	var cMsg = document.getElementById('cMsg');
+	var x = document.getElementById("c-snackbar");
+
+
+	if(cName.value === '' || cEmail.value === '' || cMsg.value === '') {
+
+	}
+
+	else {
+		x.className = "show";
+		setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
+	}
+	
+  }
+

@@ -184,14 +184,13 @@
 						<!-- Work -->
 							<article id="work" class="panel">
 								<header>
-									<div class="slide-up">
-									<h2 class="namezoom">Some of my works.</h2>
+									<div class="namezoom">
+									<h2 class="rev-block"><span>Some of my works.</span></h2>
 									</div>
 								</header>
-								<p class="slide-up"><br>
+								<p class="intro-up"><br>
 									Check out some of the projects that i made.
 								</p>
-								<br><br><br>
 								<section>
 									<div class="project-grid">
 
@@ -256,31 +255,44 @@
 						<!-- Contact -->
 							<article id="contact" class="panel">
 								<header>
-									<h2>Contact Me</h2>
+									<h2 class="rev-block"><span>Get in touch.</span></h2>
+									<p class="intro-up">Do you want to collaborate on a project, need my help? Or just want to say
+										something random? Feel free to drop a message!
+									</p>
 								</header>
 								<form action="https://formsubmit.co/d727881e2dcce5b81e6dddcdac9e9756" method="POST">
 									<div>
-					
 										<div class="row">
 											<input type="hidden" name="_captcha" value="false">
+											<input type="hidden" name="_next" value="https://venjiebanks.github.io/#contact">
+											
 											<div class="col-6 col-12-medium">
-												<input type="text" name="name" placeholder="Name" required />
+												<input type="text" name="name" placeholder="Name" id="cName" required />
 											</div>
 											<div class="col-6 col-12-medium">
-												<input type="text" name="email" placeholder="Email" required/>
+												<input type="text" name="email" placeholder="Email" id="cEmail" required/>
 											</div>
 											<div class="col-12">
 												<input type="text" name="subject" placeholder="Subject" required/>
 											</div>
 											<div class="col-12">
-												<textarea name="message" placeholder="Message" rows="6" required></textarea>
+												<textarea name="message" placeholder="Message" id="cMsg" rows="6" required></textarea>
 											</div>
 											<div class="col-12">
-												<input type="submit" value="Send Message" />
+												<div class="contact-view">
+													<button class="contact-button" type="submit" onclick="contactSuccess()">
+														<span class="c-circle">
+															<span class="c-icon c-arrow"></span>
+														</span>
+														<span class="c-text">Send Message</span>
+													</button>
+												</div>	
 											</div>
 										</div>
 									</div>
 								</form>
+
+								<div id="c-snackbar">Thank you for leaving a message! :)</div>
 							</article>
 
 					</div>
@@ -290,11 +302,14 @@
 						<ul class="copyright">
 							<li>&copy; 2022</li><li>Venjie Banks</li>
 							<li>
-								<a href="" class="icon brands fa-github"></a>
+								<a href="https://github.com/venjiebanks" class="icon brands fa-github"
+								target="_blank" rel="noopener noreferrer"></a>
 								&emsp;
-								<a href="" class="icon brands fa-instagram"></a>
+								<a href="https://www.instagram.com/jiesix/" class="icon brands fa-instagram"
+								target="_blank" rel="noopener noreferrer"></a>
 								&emsp;
-								<a href="" class="icon brands fa-facebook"></a>
+								<a href="https://www.facebook.com/jiesix" class="icon brands fa-facebook"
+								target="_blank" rel="noopener noreferrer"></a>
 							</li>
 							
 						</ul>
